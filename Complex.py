@@ -5,6 +5,8 @@
 
 import math
 
+# TODO additional input cleaning in case input is not as expected.
+
 def complexAdd(*complex_numbers):
     '''Add n amount of complex numbers'''
     realBuffer = 0
@@ -16,6 +18,7 @@ def complexAdd(*complex_numbers):
 
 def complexSub(*complex_numbers):
     '''Substract n amount of complex numbers'''
+
     realBuffer = complex_numbers[0][0]
     complexBuffer = complex_numbers[0][1]
     for number in complex_numbers[1:]:
@@ -51,7 +54,7 @@ def complexDiv(complex_number1, complex_number2):
         return [float('nan'), float('nan')]
 
 def complexAngle(complex_number):
-    '''Calculate the angle of the vector between real and complex'''  
+    '''Calculate the angle between vector and real axis in degrees'''  
     if (complex_number[0] == 0 and complex_number[1] != 0): # prevent div by 0
         return math.copysign(90, complex_number[1]) 
     return math.degrees(math.atan(complex_number[1] / complex_number[0]))
